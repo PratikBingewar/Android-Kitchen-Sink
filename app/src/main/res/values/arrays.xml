@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="arr_drawer_items">
+		<item>Views &amp; Layouts</item>
+		<item>Styles</item>
+		<item>Adapter Views</item>
+		<item>Custom Views</item>
+		<item>Event Handling</item>
+		<item>Navigation</item>
+		<item>Networking</item>
+		<item>Persistence</item>
+		<item>Images</item>
+	</string-array>
+</resources>

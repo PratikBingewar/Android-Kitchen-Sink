@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
+import dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment.NavDrawerCallbacks;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks {
 
 	private DrawerLayout mDrawerLayout;
 	private FrameLayout mFrameMainContent;
@@ -29,5 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
 		mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
 		mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
+	}
+
+	@Override
+	public void onNavDrawerListItemClicked(int position) {
+
 	}
 }
