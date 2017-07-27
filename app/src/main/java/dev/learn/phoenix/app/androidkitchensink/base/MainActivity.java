@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 	private DrawerLayout mDrawerLayout;
 	private FrameLayout mFrameMainContent;
 
-
 	private NavDrawerFragment mNavDrawerFragment;
 	private FragmentManager mFragmentManager;
 
