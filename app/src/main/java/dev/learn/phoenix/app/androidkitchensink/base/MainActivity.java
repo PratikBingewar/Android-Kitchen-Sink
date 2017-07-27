@@ -8,31 +8,32 @@ import android.widget.FrameLayout;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment.NavDrawerCallbacks;
+import dev.learn.phoenix.app.androidkitchensink.views.ViewsContainerFragment;
 
 public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks {
 
-	private DrawerLayout mDrawerLayout;
-	private FrameLayout mFrameMainContent;
+    private DrawerLayout mDrawerLayout;
+    private FrameLayout mFrameMainContent;
 
-	private NavDrawerFragment mNavDrawerFragment;
-	private FragmentManager mFragmentManager;
+    private NavDrawerFragment mNavDrawerFragment;
+    private FragmentManager mFragmentManager;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.base_activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.base_activity_main);
 
-		mFragmentManager = getSupportFragmentManager();
+        mFragmentManager = getSupportFragmentManager();
 
-		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_base);
-		mFrameMainContent = (FrameLayout) findViewById(R.id.frame_main_content);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_base);
+        mFrameMainContent = (FrameLayout) findViewById(R.id.frame_main_content);
 
-		mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
-		mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
-	}
+        mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
+        mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
+    }
 
-	@Override
-	public void onNavDrawerListItemClicked(int position) {
-
-	}
+    @Override
+    public void onNavDrawerListItemClicked(int position) {
+        mFragmentManager.beginTransaction().add(R.id.frame_main_content, ViewsContainerFragment.newInstance()).commit();
+    }
 }
