@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-		  android:layout_width="match_parent"
-		  android:layout_height="match_parent"
-		  android:gravity="left"
-		  android:orientation="vertical"
-		  android:paddingBottom="@dimen/nav_drawer_list_item_padding"
-		  android:paddingLeft="@dimen/nav_drawer_list_item_padding_left"
-		  android:paddingRight="@dimen/nav_drawer_list_item_padding"
-		  android:paddingTop="@dimen/nav_drawer_list_item_padding"
-		  android:textColor="@color/colorPrimary"
-		  android:textStyle="bold"/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/activatedBackgroundIndicator"
+    android:gravity="left"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/nav_drawer_list_item_padding"
+    android:paddingLeft="@dimen/nav_drawer_list_item_padding_left"
+    android:paddingRight="@dimen/nav_drawer_list_item_padding"
+    android:paddingTop="@dimen/nav_drawer_list_item_padding"
+    android:textColor="@drawable/nav_drawer_list_item_text"
+    android:textStyle="bold" />

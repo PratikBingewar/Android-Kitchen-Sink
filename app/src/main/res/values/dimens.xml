@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<dimen name="nav_drawer_width">245dp</dimen>
+	<dimen name="nav_drawer_width">250dp</dimen>
 	<dimen name="nav_drawer_list_item_padding">17dp</dimen>
 	<dimen name="nav_drawer_list_item_padding_left">35dp</dimen>
 </resources>
