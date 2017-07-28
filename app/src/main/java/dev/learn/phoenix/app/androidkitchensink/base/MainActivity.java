@@ -34,6 +34,6 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
     @Override
     public void onNavDrawerListItemClicked(int position) {
-        mFragmentManager.beginTransaction().add(R.id.frame_main_content, ViewsContainerFragment.newInstance()).commit();
+        mFragmentManager.beginTransaction().replace(R.id.frame_main_content, ViewsContainerFragment.newInstance()).commit();
     }
 }

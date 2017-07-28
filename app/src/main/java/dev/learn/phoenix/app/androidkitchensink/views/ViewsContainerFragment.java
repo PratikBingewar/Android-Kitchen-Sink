@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
@@ -33,6 +35,13 @@ public class ViewsContainerFragment extends Fragment {
         return fragment;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mContainerListItems = new ArrayList<>();
+        populateContainerListItems();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -43,5 +52,23 @@ public class ViewsContainerFragment extends Fragment {
         mViewsListView.setAdapter(mContainerListAdapter);
 
         return view;
+    }
+
+    private void populateContainerListItems() {
+        mContainerListItems.add(new ContainerListItem("View Layouts", true));
+        mContainerListItems.add(new ContainerListItem("Linear Layout"));
+        mContainerListItems.add(new ContainerListItem("Relative Layout"));
+        mContainerListItems.add(new ContainerListItem("Percent Relative Layout"));
+        mContainerListItems.add(new ContainerListItem("Frame Layout"));
+        mContainerListItems.add(new ContainerListItem("ScrollView"));
+        mContainerListItems.add(new ContainerListItem("Views", true));
+        mContainerListItems.add(new ContainerListItem("TextView"));
+        mContainerListItems.add(new ContainerListItem("EditText"));
+        mContainerListItems.add(new ContainerListItem("Button"));
+        mContainerListItems.add(new ContainerListItem("ImageView"));
+        mContainerListItems.add(new ContainerListItem("Spinner"));
+        mContainerListItems.add(new ContainerListItem("WebView"));
+        mContainerListItems.add(new ContainerListItem("Data Binding", true));
+        mContainerListItems.add(new ContainerListItem("Binding Views"));
     }
 }
