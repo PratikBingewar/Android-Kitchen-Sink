@@ -2,4 +2,5 @@
 	<string name="app_name">Kitchen Sink</string>
 	<string name="nav_drawer_open">Open</string>
 	<string name="nav_drawer_close">Close</string>
+	<string name="sub_header">Sub Header</string>
 </resources>
