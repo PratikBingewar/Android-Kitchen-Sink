@@ -1,27 +1,31 @@
 package dev.learn.phoenix.app.androidkitchensink.views;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.shared.ContainerListAdapter;
+import dev.learn.phoenix.app.androidkitchensink.shared.ContainerListHeading;
 import dev.learn.phoenix.app.androidkitchensink.shared.ContainerListItem;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by sudharti on 7/26/17.
  */
-public class ViewsContainerFragment extends Fragment {
+public class ViewsContainerFragment extends Fragment implements AdapterView.OnItemClickListener {
+
+    private static final String TAG = ViewsContainerFragment.class.getSimpleName();
 
     private ListView mViewsListView;
 
@@ -50,25 +54,41 @@ public class ViewsContainerFragment extends Fragment {
 
         mContainerListAdapter = new ContainerListAdapter(getContext(), mContainerListItems);
         mViewsListView.setAdapter(mContainerListAdapter);
+        mViewsListView.setOnItemClickListener(this);
 
         return view;
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        ContainerListItem containerListItem = mContainerListItems.get(i);
+        Class clazz = containerListItem.getClazz();
+        if (!containerListItem.isHeading() && clazz != null) {
+            try {
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_main_content, (Fragment) clazz.newInstance())
+                        .addToBackStack(containerListItem.getText()).commit();
+            } catch (java.lang.InstantiationException | IllegalAccessException | ClassCastException e) {
+                Log.e(TAG, e.getMessage());
+            }
+        }
+    }
+
     private void populateContainerListItems() {
-        mContainerListItems.add(new ContainerListItem("View Layouts", true));
-        mContainerListItems.add(new ContainerListItem("Linear Layout"));
-        mContainerListItems.add(new ContainerListItem("Relative Layout"));
-        mContainerListItems.add(new ContainerListItem("Percent Relative Layout"));
-        mContainerListItems.add(new ContainerListItem("Frame Layout"));
-        mContainerListItems.add(new ContainerListItem("ScrollView"));
-        mContainerListItems.add(new ContainerListItem("Views", true));
-        mContainerListItems.add(new ContainerListItem("TextView"));
-        mContainerListItems.add(new ContainerListItem("EditText"));
-        mContainerListItems.add(new ContainerListItem("Button"));
-        mContainerListItems.add(new ContainerListItem("ImageView"));
-        mContainerListItems.add(new ContainerListItem("Spinner"));
-        mContainerListItems.add(new ContainerListItem("WebView"));
-        mContainerListItems.add(new ContainerListItem("Data Binding", true));
-        mContainerListItems.add(new ContainerListItem("Binding Views"));
+        mContainerListItems.add(new ContainerListHeading("View Layouts"));
+        mContainerListItems.add(new ContainerListItem("Linear Layout", ViewsLinearLayoutFragment.class));
+        mContainerListItems.add(new ContainerListItem("Relative Layout", ViewsRelativeLayoutFragment.class));
+        mContainerListItems.add(new ContainerListItem("Percent Relative Layout", null));
+        mContainerListItems.add(new ContainerListItem("Frame Layout", null));
+        mContainerListItems.add(new ContainerListItem("ScrollView", null));
+        mContainerListItems.add(new ContainerListHeading("Views"));
+        mContainerListItems.add(new ContainerListItem("TextView", null));
+        mContainerListItems.add(new ContainerListItem("EditText", null));
+        mContainerListItems.add(new ContainerListItem("Button", null));
+        mContainerListItems.add(new ContainerListItem("ImageView", null));
+        mContainerListItems.add(new ContainerListItem("Spinner", null));
+        mContainerListItems.add(new ContainerListItem("WebView", null));
+        mContainerListItems.add(new ContainerListHeading("Data Binding"));
+        mContainerListItems.add(new ContainerListItem("Binding Views", null));
     }
 }
