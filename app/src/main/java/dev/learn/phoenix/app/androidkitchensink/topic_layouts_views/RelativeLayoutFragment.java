@@ -1,4 +1,4 @@
-package dev.learn.phoenix.app.androidkitchensink.views;
+package dev.learn.phoenix.app.androidkitchensink.topic_layouts_views;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,7 +12,7 @@ import dev.learn.phoenix.app.androidkitchensink.R;
 /**
  * Created by sudharti on 7/27/17.
  */
-public class ViewsRelativeLayoutFragment extends Fragment {
+public class RelativeLayoutFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -1,4 +1,4 @@
-package dev.learn.phoenix.app.androidkitchensink.views;
+package dev.learn.phoenix.app.androidkitchensink.topic_layouts_views;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,7 +13,7 @@ import dev.learn.phoenix.app.androidkitchensink.R;
 /**
  * Created by sudharti on 7/26/17.
  */
-public class ViewsLinearLayoutFragment extends Fragment {
+public class LinearLayoutFragment extends Fragment {
 
     @Nullable
     @Override

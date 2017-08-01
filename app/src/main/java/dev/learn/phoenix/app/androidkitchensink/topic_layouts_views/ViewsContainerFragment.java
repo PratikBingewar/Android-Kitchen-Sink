@@ -1,14 +1,11 @@
-package dev.learn.phoenix.app.androidkitchensink.views;
+package dev.learn.phoenix.app.androidkitchensink.topic_layouts_views;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,8 +64,8 @@ public class ViewsContainerFragment extends Fragment {
 
     private void populateContainerListItems() {
         mContainerListItems.add(new ContainerListHeading("View Layouts"));
-        mContainerListItems.add(new ContainerListItem("Linear Layout", ViewsLinearLayoutFragment.class));
-        mContainerListItems.add(new ContainerListItem("Relative Layout", ViewsRelativeLayoutFragment.class));
+        mContainerListItems.add(new ContainerListItem("Linear Layout", LinearLayoutFragment.class));
+        mContainerListItems.add(new ContainerListItem("Relative Layout", RelativeLayoutFragment.class));
         mContainerListItems.add(new ContainerListItem("Percent Relative Layout", null));
         mContainerListItems.add(new ContainerListItem("Frame Layout", null));
         mContainerListItems.add(new ContainerListItem("ScrollView", null));

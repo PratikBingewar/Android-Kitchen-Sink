@@ -8,14 +8,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Map;
+
 import dev.learn.phoenix.app.androidkitchensink.R;
 
 /**
  * Created by sudharti on 7/31/17.
  */
-public class ContainerFragment extends Fragment{
+public class ContainerFragment extends Fragment {
 
     private ViewPager mViewPager;
+    private Map<String, ContainerListItem> mItemsMap;
+
+    public static ContainerFragment getInstance(Map<String, ContainerListItem> itemsMap) {
+        ContainerFragment containerFragment = new ContainerFragment();
+        containerFragment.mItemsMap = itemsMap;
+        return containerFragment;
+    }
 
     @Nullable
     @Override

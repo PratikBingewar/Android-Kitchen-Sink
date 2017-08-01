@@ -6,10 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment.NavDrawerCallbacks;
 import dev.learn.phoenix.app.androidkitchensink.shared.ContainerFragment;
-import dev.learn.phoenix.app.androidkitchensink.views.ViewsContainerFragment;
+import dev.learn.phoenix.app.androidkitchensink.shared.ContainerListItem;
 
 public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks {
 
@@ -18,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
     private NavDrawerFragment mNavDrawerFragment;
     private FragmentManager mFragmentManager;
+
+    List<Map<String, ContainerListItem>> mTopicsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +37,24 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
         mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
         mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
+
+        buildTopicsList();
     }
 
     @Override
     public void onNavDrawerListItemClicked(int position) {
-        mFragmentManager.beginTransaction().replace(R.id.frame_main_content, new ContainerFragment()).commit();
+        Map<String, ContainerListItem> itemsMap = null;
+        if ((itemsMap = mTopicsList.get(position)) != null) {
+            ContainerFragment containerFragment = ContainerFragment.getInstance(itemsMap);
+            mFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_main_content, containerFragment)
+                    .commit();
+        }
+    }
+
+    private void buildTopicsList() {
+        mTopicsList = new ArrayList<>();
+
     }
 }
