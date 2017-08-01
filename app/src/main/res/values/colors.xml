@@ -4,10 +4,6 @@
 	<color name="colorPrimaryDark">#263238</color>
 	<color name="colorAccent">#FF4081</color>
 
-	<color name="nav_drawer_list_bg">#FFF</color>
-	<color name="nav_drawer_list_item_selected">#F0F0F0</color>
-	<color name="nav_drawer_list_item_text_color">#009688</color>
-
 	<color name="red_50">#FFEBEE</color>
 	<color name="red_100">#FFCDD2</color>
 	<color name="red_200">#EF9A9A</color>

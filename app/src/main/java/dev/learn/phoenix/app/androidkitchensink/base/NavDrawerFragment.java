@@ -43,13 +43,13 @@ public class NavDrawerFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mNavDrawerArray = getActivity().getResources().getStringArray(R.array.arr_drawer_items);
-        mNavDrawerAdapter = new ArrayAdapter<>(getContext(), R.layout.base_item_nav_drawer_list, mNavDrawerArray);
+        mNavDrawerAdapter = new ArrayAdapter<>(getContext(), R.layout.item_nav_drawer_list, mNavDrawerArray);
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mNavDrawerListView = (ListView) inflater.inflate(R.layout.base_fragment_nav_drawer, container, false);
+        mNavDrawerListView = (ListView) inflater.inflate(R.layout.fragment_nav_drawer, container, false);
         mNavDrawerListView.setAdapter(mNavDrawerAdapter);
         mNavDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

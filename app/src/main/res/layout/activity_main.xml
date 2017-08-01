@@ -19,6 +19,6 @@
 		android:layout_height="match_parent"
 		android:layout_gravity="start"
 		android:name="dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment"
-		tools:layout="@layout/base_fragment_nav_drawer"/>
+		tools:layout="@layout/fragment_nav_drawer"/>
 	
 </android.support.v4.widget.DrawerLayout>

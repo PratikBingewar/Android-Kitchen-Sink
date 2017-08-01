@@ -16,7 +16,7 @@ public class ViewsRelativeLayoutFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.views_fragment_relative_layout, container, false);
+        View view = inflater.inflate(R.layout.fragment_relative_layout, container, false);
         return view;
     }
 }
