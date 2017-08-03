@@ -20,6 +20,10 @@ public class Metadata {
     private static final Metadata sMetadata = new Metadata();
     private Map<String, Map<String, List<ContainerListItem>>> metadataMap;
 
+    private final String[] topics = {"Views & Layouts", "Styling Views", "Adapter Views", "Event Handling",
+            "Networking", "Persistence", "Background Jobs/Services", "Intents",
+            "Image Handling", "Surface Views", "Sensors"};
+
     public static Metadata getInstance() {
         return sMetadata;
     }
@@ -33,14 +37,15 @@ public class Metadata {
         return metadataMap;
     }
 
-    public Map<String, List<ContainerListItem>> getTopic(String topic) {
-        return metadataMap.get(topic);
+    public String[] getTopics() {
+        return topics;
+    }
+
+    public Map<String, List<ContainerListItem>> getTopicMap(int position) {
+        return metadataMap.get(topics[position]);
     }
 
     private void loadMetadata() {
-        String[] topics = {"Views & Layouts", "Styling Views", "Adapter Views", "Event Handling",
-                "Networking", "Persistence", "Background Jobs/Services", "Intents",
-                "Image Handling", "Surface Views", "Sensors"};
         for (String topic : topics) {
             metadataMap.put(topic, new LinkedHashMap<String, List<ContainerListItem>>());
         }

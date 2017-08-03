@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
 import java.util.Map;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
@@ -18,11 +19,11 @@ import dev.learn.phoenix.app.androidkitchensink.R;
 public class ContainerFragment extends Fragment {
 
     private ViewPager mViewPager;
-    private Map<String, ContainerListItem> mItemsMap;
+    private Map<String, List<ContainerListItem>> mTopicMap;
 
-    public static ContainerFragment getInstance(Map<String, ContainerListItem> itemsMap) {
+    public static ContainerFragment newInstance(Map<String, List<ContainerListItem>> topicMap) {
         ContainerFragment containerFragment = new ContainerFragment();
-        containerFragment.mItemsMap = itemsMap;
+        containerFragment.mTopicMap = topicMap;
         return containerFragment;
     }
 

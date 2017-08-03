@@ -44,7 +44,7 @@ public class NavDrawerFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mNavDrawerArray = Metadata.getInstance().getMetadata().keySet().toArray(new String[]{});
+        mNavDrawerArray = Metadata.getInstance().getTopics();
         mNavDrawerAdapter = new ArrayAdapter<>(getContext(), R.layout.item_nav_drawer_list, mNavDrawerArray);
     }
 
