@@ -37,24 +37,17 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
         mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
         mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
-
-        buildTopicsList();
     }
 
     @Override
     public void onNavDrawerListItemClicked(int position) {
         Map<String, ContainerListItem> itemsMap = null;
-        if ((itemsMap = mTopicsList.get(position)) != null) {
+        if (mTopicsList != null && (itemsMap = mTopicsList.get(position)) != null) {
             ContainerFragment containerFragment = ContainerFragment.getInstance(itemsMap);
             mFragmentManager
                     .beginTransaction()
                     .replace(R.id.frame_main_content, containerFragment)
                     .commit();
         }
-    }
-
-    private void buildTopicsList() {
-        mTopicsList = new ArrayList<>();
-
     }
 }

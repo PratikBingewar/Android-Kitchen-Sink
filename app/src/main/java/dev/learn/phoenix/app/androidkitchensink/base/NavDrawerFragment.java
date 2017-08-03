@@ -17,6 +17,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
+import dev.learn.phoenix.app.androidkitchensink.common.Metadata;
+
 
 /**
  * Created by sudhar on 7/25/17.
@@ -42,7 +44,7 @@ public class NavDrawerFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mNavDrawerArray = getActivity().getResources().getStringArray(R.array.arr_drawer_items);
+        mNavDrawerArray = Metadata.getInstance().getMetadata().keySet().toArray(new String[]{});
         mNavDrawerAdapter = new ArrayAdapter<>(getContext(), R.layout.item_nav_drawer_list, mNavDrawerArray);
     }
 
@@ -102,7 +104,7 @@ public class NavDrawerFragment extends Fragment {
             mNavDrawerCallbacks.onNavDrawerListItemClicked(position);
             mNavDrawerListView.setItemChecked(position, true);
 
-            if(isDrawerOpen()) closeDrawer();
+            if (isDrawerOpen()) closeDrawer();
         }
     }
 
