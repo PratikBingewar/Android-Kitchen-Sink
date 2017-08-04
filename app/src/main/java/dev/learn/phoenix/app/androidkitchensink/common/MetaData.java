@@ -15,17 +15,17 @@ import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.RelativeLayo
  * Created by sudhar on 8/2/17.
  */
 
-public class Metadata {
+public class MetaData {
 
-    private static final Metadata sMetadata = new Metadata();
-    private Map<String, Map<String, List<ContainerListItem>>> metadataMap;
+    private static final MetaData sMetaData = new MetaData();
+    private Map<Integer, Topic> metadataMap;
 
-    private final String[] topics = {"Views & Layouts", "Styling Views", "Adapter Views", "Event Handling",
+    private final String[] mTopics = {"Views & Layouts", "Styling Views", "Adapter Views", "Event Handling",
             "Networking", "Persistence", "Background Jobs/Services", "Intents",
             "Image Handling", "Surface Views", "Sensors"};
 
-    public static Metadata getInstance() {
-        return sMetadata;
+    public static MetaData getInstance() {
+        return sMetaData;
     }
 
     public void init() {
@@ -33,30 +33,32 @@ public class Metadata {
         loadMetadata();
     }
 
-    public Map<String, Map<String, List<ContainerListItem>>> getMetadata() {
+    public Map<Integer, Topic> getMetadata() {
         return metadataMap;
     }
 
-    public String[] getTopics() {
-        return topics;
+    public Map<Integer, Section> getSectionsMap(int position) {
+        if (!metadataMap.containsKey(position)) return null;
+        return metadataMap.get(position).getSectionsMap();
     }
 
-    public Map<String, List<ContainerListItem>> getTopicMap(int position) {
-        return metadataMap.get(topics[position]);
+    public String[] getTopics() {
+        return this.mTopics;
     }
 
     private void loadMetadata() {
-        for (String topic : topics) {
-            metadataMap.put(topic, new LinkedHashMap<String, List<ContainerListItem>>());
+        for (int i = 0; i < mTopics.length; i++) {
+            metadataMap.put(0, new Topic(mTopics[i]));
         }
 
         populateViewsAndLayouts(metadataMap);
     }
 
-    private void populateViewsAndLayouts(Map<String, Map<String, List<ContainerListItem>>> metadataMap) {
-        Map<String, List<ContainerListItem>> sectionsMap = metadataMap.get("Views & Layouts");
-        sectionsMap.put("Layouts", getLayoutsList());
-        sectionsMap.put("Views", getViewsList());
+    private void populateViewsAndLayouts(Map<Integer, Topic> metadataMap) {
+        Topic topic = metadataMap.get(0);
+        Map<Integer, Section> sectionsMap = topic.getSectionsMap();
+        sectionsMap.put(0, new Section("Layouts", getLayoutsList()));
+        sectionsMap.put(1, new Section("Views", getViewsList()));
     }
 
     private List<ContainerListItem> getLayoutsList() {
