@@ -17,19 +17,19 @@ import dev.learn.phoenix.app.androidkitchensink.R;
  * Created by sudharti on 7/26/17.
  */
 
-public class SectionListAdapter extends ArrayAdapter<ContainerListItem> {
-    private List<ContainerListItem> mContainerListItems;
+public class SectionListAdapter extends ArrayAdapter<SectionListItem> {
+    private List<SectionListItem> mSectionListItems;
     private Context mContext;
 
-    public SectionListAdapter(Context context, List<ContainerListItem> containerListItems) {
-        super(context, 0, containerListItems);
+    public SectionListAdapter(Context context, List<SectionListItem> sectionListItems) {
+        super(context, 0, sectionListItems);
         this.mContext = context;
-        this.mContainerListItems = containerListItems;
+        this.mSectionListItems = sectionListItems;
     }
 
     @Override
     public int getItemViewType(int position) {
-        return mContainerListItems.get(position).isHeading() ? 0 : 1;
+        return mSectionListItems.get(position).isHeading() ? 0 : 1;
     }
 
     @Override
@@ -39,8 +39,8 @@ public class SectionListAdapter extends ArrayAdapter<ContainerListItem> {
 
     @Nullable
     @Override
-    public ContainerListItem getItem(int position) {
-        return mContainerListItems.get(position);
+    public SectionListItem getItem(int position) {
+        return mSectionListItems.get(position);
     }
 
     @NonNull

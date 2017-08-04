@@ -1,36 +1,33 @@
 package dev.learn.phoenix.app.androidkitchensink.common;
 
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import dev.learn.phoenix.app.androidkitchensink.shared.ContainerListItem;
 
 /**
  * Created by sudharti on 8/3/17.
  */
 public class Topic {
-    private String mLabel;
-    private Map<Integer, Section> mSectionsMap;
+	private String mLabel;
+	private List<Section> mSectionsList;
 
-    public Topic(String label) {
-        this.mLabel = label;
-        this.mSectionsMap = new LinkedHashMap<>();
-    }
+	public Topic(String label) {
+		this.mLabel = label;
+		this.mSectionsList = new ArrayList<>();
+	}
 
-    public String getLabel() {
-        return mLabel;
-    }
+	public String getLabel() {
+		return mLabel;
+	}
 
-    public void setLabel(String mLabel) {
-        this.mLabel = mLabel;
-    }
+	public void setLabel(String mLabel) {
+		this.mLabel = mLabel;
+	}
 
-    public Map<Integer, Section> getSectionsMap() {
-        return mSectionsMap;
-    }
+	public List<Section> getSections() {
+		return mSectionsList;
+	}
 
-    public void setSectionsMap(Map<Integer, Section> mSectionsMap) {
-        this.mSectionsMap = mSectionsMap;
-    }
+	public void setSectionsMap(List<Section> sectionsList) {
+		this.mSectionsList = sectionsList;
+	}
 }

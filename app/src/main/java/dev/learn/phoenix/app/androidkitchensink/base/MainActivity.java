@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
+import java.util.List;
 import java.util.Map;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
@@ -38,9 +39,9 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
     @Override
     public void onNavDrawerListItemClicked(int position) {
-        Map<Integer, Section> sectionsMap = MetaData.getInstance().getSectionsMap(position);
-        if (sectionsMap != null) {
-            TopicFragment topicFragment = TopicFragment.newInstance(sectionsMap);
+        List<Section> sectionList = MetaData.getInstance().getSections(position);
+        if (sectionList != null) {
+            TopicFragment topicFragment = TopicFragment.newInstance(sectionList);
             mFragmentManager
                     .beginTransaction()
                     .replace(R.id.frame_main_content, topicFragment)
