@@ -32,7 +32,7 @@ public class MetaData {
 	}
 
 	public List<Section> getSections(int position) {
-		if (position < 0 || position > topicsList.size()) return null;
+		if (position < 0 || position >= topicsList.size()) return null;
 		return topicsList.get(position).getSections();
 	}
 

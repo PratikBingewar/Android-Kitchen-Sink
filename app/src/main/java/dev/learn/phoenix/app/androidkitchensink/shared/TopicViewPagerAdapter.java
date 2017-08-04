@@ -32,7 +32,7 @@ public class TopicViewPagerAdapter extends FragmentPagerAdapter {
 
 	@Override
 	public int getCount() {
-		return mSectionsList.size();
+		return mSectionsList == null ? 0 : mSectionsList.size();
 	}
 
 	@Override

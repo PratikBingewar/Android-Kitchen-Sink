@@ -1,9 +1,11 @@
 package dev.learn.phoenix.app.androidkitchensink.shared;
 
+import java.io.Serializable;
+
 /**
  * Created by sudharti on 7/26/17.
  */
-public class SectionListItem {
+public class SectionListItem implements Serializable {
     private String mText;
     private boolean isHeading;
     private Class mClazz;
