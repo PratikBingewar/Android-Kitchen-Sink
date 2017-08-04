@@ -12,7 +12,7 @@ import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment.NavDrawerCallbacks;
 import dev.learn.phoenix.app.androidkitchensink.common.MetaData;
 import dev.learn.phoenix.app.androidkitchensink.common.Section;
-import dev.learn.phoenix.app.androidkitchensink.shared.ContainerFragment;
+import dev.learn.phoenix.app.androidkitchensink.shared.TopicFragment;
 
 public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks {
 
@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
     public void onNavDrawerListItemClicked(int position) {
         Map<Integer, Section> sectionsMap = MetaData.getInstance().getSectionsMap(position);
         if (sectionsMap != null) {
-            ContainerFragment containerFragment = ContainerFragment.newInstance(sectionsMap);
+            TopicFragment topicFragment = TopicFragment.newInstance(sectionsMap);
             mFragmentManager
                     .beginTransaction()
-                    .replace(R.id.frame_main_content, containerFragment)
+                    .replace(R.id.frame_main_content, topicFragment)
                     .commit();
         }
     }

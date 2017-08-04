@@ -17,11 +17,11 @@ import dev.learn.phoenix.app.androidkitchensink.R;
  * Created by sudharti on 7/26/17.
  */
 
-public class ContainerListAdapter extends ArrayAdapter<ContainerListItem> {
+public class SectionListAdapter extends ArrayAdapter<ContainerListItem> {
     private List<ContainerListItem> mContainerListItems;
     private Context mContext;
 
-    public ContainerListAdapter(Context context, List<ContainerListItem> containerListItems) {
+    public SectionListAdapter(Context context, List<ContainerListItem> containerListItems) {
         super(context, 0, containerListItems);
         this.mContext = context;
         this.mContainerListItems = containerListItems;

@@ -15,11 +15,11 @@ import dev.learn.phoenix.app.androidkitchensink.common.Section;
  * Created by sudharti on 8/2/17.
  */
 
-public class ContainerViewPagerAdapter extends FragmentPagerAdapter {
+public class TopicViewPagerAdapter extends FragmentPagerAdapter {
 
     private Map<Integer, Section> mSectionsMap;
 
-    public ContainerViewPagerAdapter(FragmentManager fragmentManager, Map<Integer, Section> sectionsMap) {
+    public TopicViewPagerAdapter(FragmentManager fragmentManager, Map<Integer, Section> sectionsMap) {
         super(fragmentManager);
         this.mSectionsMap = sectionsMap;
     }

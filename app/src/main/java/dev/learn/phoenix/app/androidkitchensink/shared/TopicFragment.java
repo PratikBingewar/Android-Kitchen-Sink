@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
 import java.util.Map;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
@@ -17,16 +16,16 @@ import dev.learn.phoenix.app.androidkitchensink.common.Section;
 /**
  * Created by sudharti on 7/31/17.
  */
-public class ContainerFragment extends Fragment {
+public class TopicFragment extends Fragment {
 
     private ViewPager mViewPager;
     private Map<Integer, Section> mSectionsMap;
-    private ContainerViewPagerAdapter mViewPagerAdapter;
+    private TopicViewPagerAdapter mViewPagerAdapter;
 
-    public static ContainerFragment newInstance(Map<Integer, Section> sectionsMap) {
-        ContainerFragment containerFragment = new ContainerFragment();
-        containerFragment.mSectionsMap = sectionsMap;
-        return containerFragment;
+    public static TopicFragment newInstance(Map<Integer, Section> sectionsMap) {
+        TopicFragment topicFragment = new TopicFragment();
+        topicFragment.mSectionsMap = sectionsMap;
+        return topicFragment;
     }
 
     @Nullable
@@ -34,7 +33,7 @@ public class ContainerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_container, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
-        mViewPagerAdapter = new ContainerViewPagerAdapter(getFragmentManager(), mSectionsMap);
+        mViewPagerAdapter = new TopicViewPagerAdapter(getFragmentManager(), mSectionsMap);
         mViewPager.setAdapter(mViewPagerAdapter);
         return view;
     }
