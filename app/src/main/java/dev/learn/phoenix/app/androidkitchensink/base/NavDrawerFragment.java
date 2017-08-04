@@ -17,7 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
-import dev.learn.phoenix.app.androidkitchensink.common.Metadata;
+import dev.learn.phoenix.app.androidkitchensink.common.MetaData;
 
 
 /**
@@ -44,7 +44,7 @@ public class NavDrawerFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mNavDrawerArray = Metadata.getInstance().getTopics();
+        mNavDrawerArray = MetaData.getInstance().getTopics();
         mNavDrawerAdapter = new ArrayAdapter<>(getContext(), R.layout.item_nav_drawer_list, mNavDrawerArray);
     }
 

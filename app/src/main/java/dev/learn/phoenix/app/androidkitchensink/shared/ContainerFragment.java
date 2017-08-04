@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
+import dev.learn.phoenix.app.androidkitchensink.common.Section;
 
 /**
  * Created by sudharti on 7/31/17.
@@ -19,11 +20,12 @@ import dev.learn.phoenix.app.androidkitchensink.R;
 public class ContainerFragment extends Fragment {
 
     private ViewPager mViewPager;
-    private Map<String, List<ContainerListItem>> mTopicMap;
+    private Map<Integer, Section> mSectionsMap;
+    private ContainerViewPagerAdapter mViewPagerAdapter;
 
-    public static ContainerFragment newInstance(Map<String, List<ContainerListItem>> topicMap) {
+    public static ContainerFragment newInstance(Map<Integer, Section> sectionsMap) {
         ContainerFragment containerFragment = new ContainerFragment();
-        containerFragment.mTopicMap = topicMap;
+        containerFragment.mSectionsMap = sectionsMap;
         return containerFragment;
     }
 
@@ -32,6 +34,8 @@ public class ContainerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_container, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
+        mViewPagerAdapter = new ContainerViewPagerAdapter(getFragmentManager(), mSectionsMap);
+        mViewPager.setAdapter(mViewPagerAdapter);
         return view;
     }
 }

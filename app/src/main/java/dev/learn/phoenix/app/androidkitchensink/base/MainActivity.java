@@ -6,15 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment.NavDrawerCallbacks;
-import dev.learn.phoenix.app.androidkitchensink.common.Metadata;
+import dev.learn.phoenix.app.androidkitchensink.common.MetaData;
+import dev.learn.phoenix.app.androidkitchensink.common.Section;
 import dev.learn.phoenix.app.androidkitchensink.shared.ContainerFragment;
-import dev.learn.phoenix.app.androidkitchensink.shared.ContainerListItem;
 
 public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks {
 
@@ -40,9 +38,9 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
     @Override
     public void onNavDrawerListItemClicked(int position) {
-        Map<String, List<ContainerListItem>> topicMap = Metadata.getInstance().getTopicMap(position);
-        if (topicMap != null) {
-            ContainerFragment containerFragment = ContainerFragment.newInstance(topicMap);
+        Map<Integer, Section> sectionsMap = MetaData.getInstance().getSectionsMap(position);
+        if (sectionsMap != null) {
+            ContainerFragment containerFragment = ContainerFragment.newInstance(sectionsMap);
             mFragmentManager
                     .beginTransaction()
                     .replace(R.id.frame_main_content, containerFragment)
