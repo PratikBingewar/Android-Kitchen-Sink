@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
         mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
         mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
+
+        getSupportActionBar().setElevation(0);
     }
 
     @Override

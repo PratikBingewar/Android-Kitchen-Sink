@@ -3,7 +3,7 @@ package dev.learn.phoenix.app.androidkitchensink.common;
 import java.io.Serializable;
 import java.util.List;
 
-import dev.learn.phoenix.app.androidkitchensink.shared.SectionListItem;
+import dev.learn.phoenix.app.androidkitchensink.shared.FeatureListItem;
 
 /**
  * Created by sudharti on 8/3/17.
@@ -11,18 +11,18 @@ import dev.learn.phoenix.app.androidkitchensink.shared.SectionListItem;
 
 public class Section implements Serializable {
     private String mTitle;
-    private List<SectionListItem> mSectionListItems;
+    private List<FeatureListItem> mFeatureListItems;
 
-    public Section(String mTitle, List<SectionListItem> mSectionListItems) {
+    public Section(String mTitle, List<FeatureListItem> mFeatureListItems) {
         this.mTitle = mTitle;
-        this.mSectionListItems = mSectionListItems;
+        this.mFeatureListItems = mFeatureListItems;
     }
 
     public String getTitle() {
         return mTitle;
     }
 
-    public List<SectionListItem> getSectionListItems() {
-        return mSectionListItems;
+    public List<FeatureListItem> getSectionListItems() {
+        return mFeatureListItems;
     }
 }

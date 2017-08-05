@@ -3,7 +3,7 @@ package dev.learn.phoenix.app.androidkitchensink.common;
 import java.util.ArrayList;
 import java.util.List;
 
-import dev.learn.phoenix.app.androidkitchensink.shared.SectionListItem;
+import dev.learn.phoenix.app.androidkitchensink.shared.FeatureListItem;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.FrameLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.LinearLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.PercentRelativeLayoutFragment;
@@ -50,32 +50,32 @@ public class MetaData {
 
 	private void populateViewsAndLayouts(Topic topic) {
 		List<Section> sectionsList = topic.getSections();
-		sectionsList.add(new Section("Layouts", getLayoutsList()));
-		sectionsList.add(new Section("Views", getViewsList()));
+		sectionsList.add(new Section("LAYOUTS", getLayoutsList()));
+		sectionsList.add(new Section("VIEWS", getViewsList()));
 	}
 
-	private List<SectionListItem> getLayoutsList() {
-		SectionListItem[] sectionListItems = new SectionListItem[]{
-				new SectionListItem("Linear Layout", LinearLayoutFragment.class),
-				new SectionListItem("Relative Layout", RelativeLayoutFragment.class),
-				new SectionListItem("Percentage Relative Layout", PercentRelativeLayoutFragment.class),
-				new SectionListItem("Frame Layout", FrameLayoutFragment.class)
+	private List<FeatureListItem> getLayoutsList() {
+		FeatureListItem[] featureListItems = new FeatureListItem[]{
+				new FeatureListItem("Linear Layout", LinearLayoutFragment.class),
+				new FeatureListItem("Relative Layout", RelativeLayoutFragment.class),
+				new FeatureListItem("Percentage Relative Layout", PercentRelativeLayoutFragment.class),
+				new FeatureListItem("Frame Layout", FrameLayoutFragment.class)
 		};
 
-		return constructList(sectionListItems);
+		return constructList(featureListItems);
 	}
 
-	private List<SectionListItem> getViewsList() {
-		SectionListItem[] sectionListItems = new SectionListItem[]{};
-		return constructList(sectionListItems);
+	private List<FeatureListItem> getViewsList() {
+		FeatureListItem[] featureListItems = new FeatureListItem[]{};
+		return constructList(featureListItems);
 	}
 
 
-	private List<SectionListItem> constructList(SectionListItem[] sectionListItems) {
-		List<SectionListItem> sectionListItemsList = new ArrayList<>();
-		for (SectionListItem sectionListItem : sectionListItems) {
-			sectionListItemsList.add(sectionListItem);
+	private List<FeatureListItem> constructList(FeatureListItem[] featureListItems) {
+		List<FeatureListItem> featureListItemsList = new ArrayList<>();
+		for (FeatureListItem featureListItem : featureListItems) {
+			featureListItemsList.add(featureListItem);
 		}
-		return sectionListItemsList;
+		return featureListItemsList;
 	}
 }

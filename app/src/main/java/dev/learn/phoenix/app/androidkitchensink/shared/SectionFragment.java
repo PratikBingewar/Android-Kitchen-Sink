@@ -30,7 +30,7 @@ public class SectionFragment extends Fragment implements AdapterView.OnItemClick
 	private ListView mListView;
 
 	private Section mSection;
-	private List<SectionListItem> mSectionListItems;
+	private List<FeatureListItem> mFeatureListItems;
 	private SectionListAdapter mSectionListAdapter;
 
 	public static SectionFragment newInstance(Section section) {
@@ -47,7 +47,7 @@ public class SectionFragment extends Fragment implements AdapterView.OnItemClick
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.mSection = (Section) getArguments().getSerializable(SECTION);
-		this.mSectionListItems = mSection.getSectionListItems();
+		this.mFeatureListItems = mSection.getSectionListItems();
 	}
 
 	@Nullable
@@ -61,14 +61,14 @@ public class SectionFragment extends Fragment implements AdapterView.OnItemClick
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		mSectionListAdapter = new SectionListAdapter(getContext(), this.mSectionListItems);
+		mSectionListAdapter = new SectionListAdapter(getContext(), this.mFeatureListItems);
         mListView.setAdapter(mSectionListAdapter);
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-		SectionListItem sectionListItem = mSectionListItems.get(i);
-		Class clazz = sectionListItem.getClazz();
+		FeatureListItem featureListItem = mFeatureListItems.get(i);
+		Class clazz = featureListItem.getClazz();
 		try {
 			getActivity().getSupportFragmentManager().beginTransaction()
 					.replace(R.id.frame_main_content, (Fragment) clazz.newInstance())

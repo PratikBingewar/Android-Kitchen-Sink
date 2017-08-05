@@ -8,7 +8,7 @@
     <android.support.v4.view.PagerTabStrip
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green_500"
+        android:background="@color/deep_purple_600"
         android:layout_gravity="top">
     </android.support.v4.view.PagerTabStrip>
 

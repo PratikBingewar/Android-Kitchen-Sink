@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.common.Section;
@@ -45,7 +44,7 @@ public class TopicFragment extends Fragment {
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_container, container, false);
+		View view = inflater.inflate(R.layout.fragment_topic, container, false);
 		mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
 		return view;
 	}
