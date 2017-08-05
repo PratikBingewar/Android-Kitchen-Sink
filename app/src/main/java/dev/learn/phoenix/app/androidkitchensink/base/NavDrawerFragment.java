@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -18,6 +17,7 @@ import android.widget.ListView;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.common.MetaData;
+import dev.learn.phoenix.app.androidkitchensink.shared.AnimatedActionBarDrawerToggle;
 
 
 /**
@@ -29,7 +29,7 @@ public class NavDrawerFragment extends Fragment {
     private ListView mNavDrawerListView;
     private DrawerLayout mDrawerLayout;
 
-    private ActionBarDrawerToggle mActionBarToggle;
+    private AnimatedActionBarDrawerToggle mActionBarToggle;
 
     private String[] mNavDrawerArray;
     private ArrayAdapter<String> mNavDrawerAdapter;
@@ -87,7 +87,7 @@ public class NavDrawerFragment extends Fragment {
         this.mDrawerLayout = drawerLayout;
         this.mDrawerFragment = getActivity().findViewById(navDrawerFragmentId);
 
-        mActionBarToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout,
+        mActionBarToggle = new AnimatedActionBarDrawerToggle(getActivity(), mDrawerLayout,
                 R.string.nav_drawer_open, R.string.nav_drawer_close);
         mActionBarToggle.syncState();
         mDrawerLayout.addDrawerListener(mActionBarToggle);
@@ -116,6 +116,12 @@ public class NavDrawerFragment extends Fragment {
         mDrawerLayout.closeDrawer(mDrawerFragment);
     }
 
+    public void toggleMenu(boolean enabled) {
+        if(enabled)
+            mActionBarToggle.animateToMenu();
+        else
+            mActionBarToggle.animateToBackArrow();
+    }
     public interface NavDrawerCallbacks {
         public void onNavDrawerListItemClicked(int position);
     }
