@@ -47,8 +47,13 @@ public class TopicFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_container, container, false);
 		mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
-		mViewPagerAdapter = new TopicViewPagerAdapter(getFragmentManager(), mSectionsList);
-		mViewPager.setAdapter(mViewPagerAdapter);
 		return view;
+	}
+
+	@Override
+	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		mViewPagerAdapter = new TopicViewPagerAdapter(getChildFragmentManager(), mSectionsList);
+		mViewPager.setAdapter(mViewPagerAdapter);
 	}
 }

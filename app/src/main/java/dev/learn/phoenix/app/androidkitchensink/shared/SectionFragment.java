@@ -54,10 +54,15 @@ public class SectionFragment extends Fragment implements AdapterView.OnItemClick
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		mListView = (ListView) inflater.inflate(R.layout.fragment_section, container, false);
-		mSectionListAdapter = new SectionListAdapter(getContext(), this.mSectionListItems);
-		mListView.setAdapter(mSectionListAdapter);
-		mListView.setOnItemClickListener(this);
+        mListView.setOnItemClickListener(this);
 		return mListView;
+	}
+
+	@Override
+	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		mSectionListAdapter = new SectionListAdapter(getContext(), this.mSectionListItems);
+        mListView.setAdapter(mSectionListAdapter);
 	}
 
 	@Override
@@ -66,8 +71,7 @@ public class SectionFragment extends Fragment implements AdapterView.OnItemClick
 		Class clazz = sectionListItem.getClazz();
 		try {
 			getActivity().getSupportFragmentManager().beginTransaction()
-					.hide(this)
-					.add(R.id.frame_main_content, (Fragment) clazz.newInstance())
+					.replace(R.id.frame_main_content, (Fragment) clazz.newInstance())
 					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 					.addToBackStack(null).commit();
 		} catch (java.lang.InstantiationException | IllegalAccessException e) {

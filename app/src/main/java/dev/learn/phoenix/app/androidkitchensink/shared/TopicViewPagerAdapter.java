@@ -1,13 +1,10 @@
 package dev.learn.phoenix.app.androidkitchensink.shared;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.List;
-import java.util.Map;
 
 import dev.learn.phoenix.app.androidkitchensink.common.Section;
 
@@ -15,7 +12,7 @@ import dev.learn.phoenix.app.androidkitchensink.common.Section;
  * Created by sudharti on 8/2/17.
  */
 
-public class TopicViewPagerAdapter extends FragmentPagerAdapter {
+public class TopicViewPagerAdapter extends FragmentStatePagerAdapter {
 
 	private List<Section> mSectionsList;
 
