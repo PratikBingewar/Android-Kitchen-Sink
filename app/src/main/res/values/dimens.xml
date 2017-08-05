@@ -9,4 +9,5 @@
     <dimen name="shared_list_item_container_text_size">14sp</dimen>
     <dimen name="shared_list_item_heading_container_text_size">16sp</dimen>
     <dimen name="shared_list_item_container_icon_margin_right">25dp</dimen>
+    <dimen name="tab_strip_padding">10dp</dimen>
 </resources>

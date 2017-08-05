@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 
 import java.util.List;
-import java.util.Map;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment.NavDrawerCallbacks;
@@ -15,7 +14,7 @@ import dev.learn.phoenix.app.androidkitchensink.common.MetaData;
 import dev.learn.phoenix.app.androidkitchensink.common.Section;
 import dev.learn.phoenix.app.androidkitchensink.shared.TopicFragment;
 
-public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks {
+public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks, FragmentManager.OnBackStackChangedListener {
 
     private DrawerLayout mDrawerLayout;
     private FrameLayout mFrameMainContent;
@@ -36,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
         mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
         mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
 
+        mFragmentManager.addOnBackStackChangedListener(this);
+
         getSupportActionBar().setElevation(0);
     }
 
@@ -49,5 +50,11 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
                     .replace(R.id.frame_main_content, topicFragment)
                     .commit();
         }
+    }
+
+
+    @Override
+    public void onBackStackChanged() {
+        mNavDrawerFragment.toggleMenu((mFragmentManager.getBackStackEntryCount() == 0));
     }
 }

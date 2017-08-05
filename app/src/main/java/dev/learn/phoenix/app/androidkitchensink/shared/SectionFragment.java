@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,7 +73,7 @@ public class SectionFragment extends Fragment implements AdapterView.OnItemClick
 		try {
 			getActivity().getSupportFragmentManager().beginTransaction()
 					.replace(R.id.frame_main_content, (Fragment) clazz.newInstance())
-					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
 					.addToBackStack(null).commit();
 		} catch (java.lang.InstantiationException | IllegalAccessException e) {
 			Log.e(TAG, e.getMessage());
