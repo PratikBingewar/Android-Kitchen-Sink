@@ -14,38 +14,38 @@ import dev.learn.phoenix.app.androidkitchensink.common.Section;
 
 public class TopicViewPagerAdapter extends FragmentStatePagerAdapter {
 
-	private List<Section> mSectionsList;
+    private List<Section> mSectionsList;
 
-	public TopicViewPagerAdapter(FragmentManager fragmentManager, List<Section> sectionsList) {
-		super(fragmentManager);
-		this.mSectionsList = sectionsList;
-	}
+    public TopicViewPagerAdapter(FragmentManager fragmentManager, List<Section> sectionsList) {
+        super(fragmentManager);
+        this.mSectionsList = sectionsList;
+    }
 
-	@Override
-	public Fragment getItem(int position) {
-		SectionFragment sectionFragment = SectionFragment.newInstance(getSection(position));
-		return sectionFragment;
-	}
+    @Override
+    public Fragment getItem(int position) {
+        SectionFragment sectionFragment = SectionFragment.newInstance(getSection(position));
+        return sectionFragment;
+    }
 
-	@Override
-	public int getCount() {
-		return mSectionsList == null ? 0 : mSectionsList.size();
-	}
+    @Override
+    public int getCount() {
+        return mSectionsList == null ? 0 : mSectionsList.size();
+    }
 
-	@Override
-	public CharSequence getPageTitle(int position) {
-		Section section = getSection(position);
-		if (section != null) {
-			return section.getTitle();
-		}
+    @Override
+    public CharSequence getPageTitle(int position) {
+        Section section = getSection(position);
+        if (section != null) {
+            return section.getTitle();
+        }
 
-		return "";
-	}
+        return "";
+    }
 
-	private Section getSection(int position) {
-		if (mSectionsList != null) {
-			return mSectionsList.get(position);
-		}
-		return null;
-	}
+    private Section getSection(int position) {
+        if (mSectionsList != null) {
+            return mSectionsList.get(position);
+        }
+        return null;
+    }
 }

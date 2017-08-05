@@ -8,8 +8,8 @@
     <android.support.v4.view.PagerTabStrip
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/tab_strip_padding"
         android:background="@color/deep_purple_600"
+        android:padding="@dimen/tab_strip_padding"
         android:textColor="@color/white"
         android:textSize="12sp"></android.support.v4.view.PagerTabStrip>
 

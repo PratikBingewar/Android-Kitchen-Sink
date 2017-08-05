@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:paddingBottom="@dimen/shared_list_item_container_padding"
-    android:paddingTop="@dimen/shared_list_item_container_padding"
     android:paddingLeft="@dimen/shared_list_item_container_padding_left"
-    android:orientation="horizontal">
+    android:paddingTop="@dimen/shared_list_item_container_padding">
 
     <TextView
         android:id="@+id/text_view_item_text"
@@ -21,7 +21,7 @@
         android:layout_alignParentRight="true"
         android:background="@drawable/ic_chevron_right_grey600_36dp" />
     <!--<View-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:background="@color/grey_300" />-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/grey_300" />-->
 </RelativeLayout>

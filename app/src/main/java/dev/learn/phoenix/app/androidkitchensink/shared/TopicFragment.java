@@ -19,46 +19,46 @@ import dev.learn.phoenix.app.androidkitchensink.common.Section;
  */
 public class TopicFragment extends Fragment {
 
-	private static final String SECTIONS = "SECTIONS";
+    private static final String SECTIONS = "SECTIONS";
 
-	private ViewPager mViewPager;
-	private List<Section> mSectionsList;
-	private TopicViewPagerAdapter mViewPagerAdapter;
+    private ViewPager mViewPager;
+    private List<Section> mSectionsList;
+    private TopicViewPagerAdapter mViewPagerAdapter;
 
-	public static TopicFragment newInstance(List<Section> sectionsList) {
-		TopicFragment topicFragment = new TopicFragment();
+    public static TopicFragment newInstance(List<Section> sectionsList) {
+        TopicFragment topicFragment = new TopicFragment();
 
-		Bundle args = new Bundle();
-		args.putSerializable(SECTIONS, (Serializable) sectionsList);
-		topicFragment.setArguments(args);
+        Bundle args = new Bundle();
+        args.putSerializable(SECTIONS, (Serializable) sectionsList);
+        topicFragment.setArguments(args);
 
-		return topicFragment;
-	}
+        return topicFragment;
+    }
 
-	@Override
-	public void onCreate(@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		this.mSectionsList = (List<Section>) getArguments().getSerializable(SECTIONS);
-	}
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.mSectionsList = (List<Section>) getArguments().getSerializable(SECTIONS);
+    }
 
-	@Nullable
-	@Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_topic, container, false);
-		mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
-		return view;
-	}
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_topic, container, false);
+        mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
+        return view;
+    }
 
-	@Override
-	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		mViewPagerAdapter = new TopicViewPagerAdapter(getChildFragmentManager(), mSectionsList);
-	}
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mViewPagerAdapter = new TopicViewPagerAdapter(getChildFragmentManager(), mSectionsList);
+    }
 
 
-	@Override
-	public void onResume() {
-		super.onResume();
-		mViewPager.setAdapter(mViewPagerAdapter);
-	}
+    @Override
+    public void onResume() {
+        super.onResume();
+        mViewPager.setAdapter(mViewPagerAdapter);
+    }
 }

@@ -1,9 +1,7 @@
 package dev.learn.phoenix.app.androidkitchensink.shared;
 
-import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -20,14 +18,11 @@ public class AnimatedActionBarDrawerToggle extends ActionBarDrawerToggle {
 
     private final DrawerLayout mDrawerLayout;
     private final Activity mActivity;
-    private State mState;
-
     private final DecelerateInterpolator mInterpolator = new DecelerateInterpolator();
     private final ValueAnimator stateMenuAnum = ValueAnimator.ofFloat(ARROW_POSITION, MENU_POSITION);
     private final ValueAnimator arrowAnim = ValueAnimator.ofFloat(MENU_POSITION, ARROW_POSITION);
+    private State mState;
     private ValueAnimator anim;
-
-    private enum State {UP_ARROW, MENU}
 
     public AnimatedActionBarDrawerToggle(Activity activity, DrawerLayout mDrawerLayout, int openDrawerContentDescriptionResource, int closeDrawerContentDescriptionResource) {
         super(activity, mDrawerLayout, openDrawerContentDescriptionResource, closeDrawerContentDescriptionResource);
@@ -72,4 +67,6 @@ public class AnimatedActionBarDrawerToggle extends ActionBarDrawerToggle {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private enum State {UP_ARROW, MENU}
 }
