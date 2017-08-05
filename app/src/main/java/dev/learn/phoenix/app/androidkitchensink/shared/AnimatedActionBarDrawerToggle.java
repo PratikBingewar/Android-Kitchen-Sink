@@ -56,14 +56,7 @@ public class AnimatedActionBarDrawerToggle extends ActionBarDrawerToggle {
 
         anim.setInterpolator(mInterpolator);
         anim.setDuration(ANIMATION_DURATION);
-
-        Handler handler = new Handler();
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                anim.start();
-            }
-        });
+        anim.start();
 
         mState = state;
     }

@@ -53,6 +53,12 @@ public class TopicFragment extends Fragment {
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		mViewPagerAdapter = new TopicViewPagerAdapter(getChildFragmentManager(), mSectionsList);
+	}
+
+
+	@Override
+	public void onResume() {
+		super.onResume();
 		mViewPager.setAdapter(mViewPagerAdapter);
 	}
 }

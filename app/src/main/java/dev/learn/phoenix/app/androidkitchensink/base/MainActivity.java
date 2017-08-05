@@ -1,5 +1,6 @@
 package dev.learn.phoenix.app.androidkitchensink.base;
 
+import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -55,6 +56,12 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
     @Override
     public void onBackStackChanged() {
-        mNavDrawerFragment.toggleMenu((mFragmentManager.getBackStackEntryCount() == 0));
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                mNavDrawerFragment.toggleMenu((mFragmentManager.getBackStackEntryCount() == 0));
+            }
+        });
     }
 }

@@ -117,10 +117,13 @@ public class NavDrawerFragment extends Fragment {
     }
 
     public void toggleMenu(boolean enabled) {
-        if(enabled)
+        if(enabled) {
+            mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNDEFINED);
             mActionBarToggle.animateToMenu();
-        else
+        } else {
+            mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
             mActionBarToggle.animateToBackArrow();
+        }
     }
     public interface NavDrawerCallbacks {
         public void onNavDrawerListItemClicked(int position);
