@@ -1,4 +1,4 @@
-package dev.learn.phoenix.app.androidkitchensink.shared;
+package dev.learn.phoenix.app.androidkitchensink.base.views;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;

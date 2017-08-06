@@ -1,28 +1,33 @@
-package dev.learn.phoenix.app.androidkitchensink.common;
+package dev.learn.phoenix.app.androidkitchensink.util;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import dev.learn.phoenix.app.androidkitchensink.shared.FeatureListItem;
+import dev.learn.phoenix.app.androidkitchensink.common.FeatureListItem;
+import dev.learn.phoenix.app.androidkitchensink.common.Section;
+import dev.learn.phoenix.app.androidkitchensink.common.Topic;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.ButtonFragment;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.EditTextFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.FrameLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.LinearLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.PercentRelativeLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.RelativeLayoutFragment;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.TextViewFragment;
 
 /**
  * Created by sudhar on 8/2/17.
  */
 
-public class MetaData {
+public class MetaDataUtil {
 
-    private static final MetaData sMetaData = new MetaData();
+    private static final MetaDataUtil S_META_DATA_UTIL = new MetaDataUtil();
     private final String[] mTopics = {"Views & Layouts", "Styling Views", "Adapter Views", "Event Handling",
             "Networking", "Persistence", "Background Jobs/Services", "Intents",
             "Image Handling", "Surface Views", "Sensors"};
     private List<Topic> topicsList;
 
-    public static MetaData getInstance() {
-        return sMetaData;
+    public static MetaDataUtil getInstance() {
+        return S_META_DATA_UTIL;
     }
 
     public void init() {
@@ -65,7 +70,11 @@ public class MetaData {
     }
 
     private List<FeatureListItem> getViewsList() {
-        FeatureListItem[] featureListItems = new FeatureListItem[]{};
+        FeatureListItem[] featureListItems = new FeatureListItem[]{
+                new FeatureListItem("Button", ButtonFragment.class),
+                new FeatureListItem("Text View", TextViewFragment.class),
+                new FeatureListItem("Edit Text", EditTextFragment.class)
+        };
         return constructList(featureListItems);
     }
 

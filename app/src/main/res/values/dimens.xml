@@ -3,11 +3,10 @@
     <dimen name="nav_drawer_width">275dp</dimen>
     <dimen name="nav_drawer_list_item_padding">17dp</dimen>
     <dimen name="nav_drawer_list_item_padding_left">35dp</dimen>
-    <dimen name="shared_list_item_container_padding_left">35dp</dimen>
-    <dimen name="shared_list_item_heading_container_padding">15dp</dimen>
-    <dimen name="shared_list_item_container_padding">12dp</dimen>
-    <dimen name="shared_list_item_container_text_size">14sp</dimen>
-    <dimen name="shared_list_item_heading_container_text_size">16sp</dimen>
-    <dimen name="shared_list_item_container_icon_margin_right">25dp</dimen>
     <dimen name="tab_strip_padding">10dp</dimen>
+    <dimen name="tab_strip_text_size">13sp</dimen>
+    <dimen name="feature_list_item_number_box_size">70dp</dimen>
+    <dimen name="feature_list_item_number_text_size">24sp</dimen>
+    <dimen name="feature_list_item_name_text_size">15sp</dimen>
+    <dimen name="feature_list_item_name_margin_left">15dp</dimen>
 </resources>

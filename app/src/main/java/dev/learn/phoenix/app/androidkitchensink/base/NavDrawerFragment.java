@@ -16,8 +16,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
-import dev.learn.phoenix.app.androidkitchensink.common.MetaData;
-import dev.learn.phoenix.app.androidkitchensink.shared.AnimatedActionBarDrawerToggle;
+import dev.learn.phoenix.app.androidkitchensink.util.MetaDataUtil;
+import dev.learn.phoenix.app.androidkitchensink.base.views.AnimatedActionBarDrawerToggle;
 
 
 /**
@@ -44,7 +44,7 @@ public class NavDrawerFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mNavDrawerArray = MetaData.getInstance().getTopics();
+        mNavDrawerArray = MetaDataUtil.getInstance().getTopics();
         mNavDrawerAdapter = new ArrayAdapter<>(getContext(), R.layout.item_nav_drawer_list, mNavDrawerArray);
     }
 

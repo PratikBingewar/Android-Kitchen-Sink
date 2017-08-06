@@ -1,4 +1,4 @@
-package dev.learn.phoenix.app.androidkitchensink.shared;
+package dev.learn.phoenix.app.androidkitchensink.common;
 
 import java.io.Serializable;
 

@@ -11,7 +11,7 @@ import java.util.List;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment.NavDrawerCallbacks;
-import dev.learn.phoenix.app.androidkitchensink.common.MetaData;
+import dev.learn.phoenix.app.androidkitchensink.util.MetaDataUtil;
 import dev.learn.phoenix.app.androidkitchensink.common.Section;
 import dev.learn.phoenix.app.androidkitchensink.shared.TopicFragment;
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
     @Override
     public void onNavDrawerListItemClicked(int position) {
-        List<Section> sectionList = MetaData.getInstance().getSections(position);
+        List<Section> sectionList = MetaDataUtil.getInstance().getSections(position);
         if (sectionList != null) {
             TopicFragment topicFragment = TopicFragment.newInstance(sectionList);
             mFragmentManager

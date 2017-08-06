@@ -15,6 +15,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
+import dev.learn.phoenix.app.androidkitchensink.common.FeatureListItem;
 import dev.learn.phoenix.app.androidkitchensink.common.Section;
 
 /**

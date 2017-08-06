@@ -2,26 +2,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingBottom="@dimen/shared_list_item_container_padding"
-    android:paddingLeft="@dimen/shared_list_item_container_padding_left"
-    android:paddingTop="@dimen/shared_list_item_container_padding">
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_item_number"
+        android:layout_width="@dimen/feature_list_item_number_box_size"
+        android:layout_height="@dimen/feature_list_item_number_box_size"
+        android:layout_alignParentLeft="true"
+        android:background="@color/grey_200">
+        <TextView
+            android:id="@+id/text_view_item_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/feature_list_item_number_text_size"
+            android:textColor="@color/colorAccent" />
+    </RelativeLayout>
 
     <TextView
-        android:id="@+id/text_view_item_text"
+        android:id="@+id/text_view_item_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/relative_layout_item_number"
+        android:layout_marginLeft="@dimen/feature_list_item_name_margin_left"
         android:layout_centerVertical="true"
-        android:textSize="@dimen/shared_list_item_container_text_size" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/feature_list_item_name_text_size" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:backgroundTint="@color/colorAccent"
         android:background="@drawable/ic_chevron_right_grey600_36dp" />
-    <!--<View-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="1dp"-->
-    <!--android:background="@color/grey_300" />-->
 </RelativeLayout>

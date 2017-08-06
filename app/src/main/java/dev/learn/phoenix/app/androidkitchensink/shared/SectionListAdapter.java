@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
+import dev.learn.phoenix.app.androidkitchensink.common.FeatureListItem;
 
 /**
  * Created by sudharti on 7/26/17.
@@ -47,18 +48,21 @@ public class SectionListAdapter extends ArrayAdapter<FeatureListItem> {
             viewHolder = new ViewHolder();
 
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_feature_list, null);
-            viewHolder.mTextView = (TextView) convertView.findViewById(R.id.text_view_item_text);
+            viewHolder.mTextViewName = (TextView) convertView.findViewById(R.id.text_view_item_name);
+            viewHolder.mTextViewNumber = (TextView) convertView.findViewById(R.id.text_view_item_number);
 
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.mTextView.setText(getItem(position).getText());
+        viewHolder.mTextViewName.setText(getItem(position).getText());
+        viewHolder.mTextViewNumber.setText(String.valueOf(position + 1));
+
         return convertView;
     }
 
     protected static class ViewHolder {
-        private TextView mTextView;
+        private TextView mTextViewName, mTextViewNumber;
     }
 }

@@ -3,12 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/activatedBackgroundIndicator"
-    android:fontFamily="sans-serif"
     android:gravity="left"
     android:orientation="vertical"
     android:paddingBottom="@dimen/nav_drawer_list_item_padding"
     android:paddingLeft="@dimen/nav_drawer_list_item_padding_left"
     android:paddingRight="@dimen/nav_drawer_list_item_padding"
     android:paddingTop="@dimen/nav_drawer_list_item_padding"
-    android:textColor="@drawable/nav_drawer_list_text_selector"
-    android:textStyle="bold" />
+    android:textColor="@drawable/nav_drawer_list_text_selector" />
