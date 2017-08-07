@@ -2,6 +2,7 @@ package dev.learn.phoenix.app.androidkitchensink.base.views;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -51,7 +52,13 @@ public class AnimatedActionBarDrawerToggle extends ActionBarDrawerToggle {
 
         anim.setInterpolator(mInterpolator);
         anim.setDuration(ANIMATION_DURATION);
-        anim.start();
+
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                anim.start();
+            }
+        });
 
         mState = state;
     }

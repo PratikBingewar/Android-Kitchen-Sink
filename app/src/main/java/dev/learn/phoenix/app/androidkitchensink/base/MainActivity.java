@@ -56,12 +56,6 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
 
     @Override
     public void onBackStackChanged() {
-        Handler handler = new Handler();
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                mNavDrawerFragment.toggleMenu((mFragmentManager.getBackStackEntryCount() == 0));
-            }
-        });
+        mNavDrawerFragment.toggleMenu((mFragmentManager.getBackStackEntryCount() == 0));
     }
 }
