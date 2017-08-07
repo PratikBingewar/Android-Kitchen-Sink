@@ -2,6 +2,7 @@ package dev.learn.phoenix.app.androidkitchensink.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -16,8 +17,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
-import dev.learn.phoenix.app.androidkitchensink.util.MetaDataUtil;
 import dev.learn.phoenix.app.androidkitchensink.base.views.AnimatedActionBarDrawerToggle;
+import dev.learn.phoenix.app.androidkitchensink.shared.ProgressBarFragment;
+import dev.learn.phoenix.app.androidkitchensink.util.MetaDataUtil;
 
 
 /**
@@ -99,12 +101,17 @@ public class NavDrawerFragment extends Fragment {
         selectItem(0);
     }
 
-    private void selectItem(int position) {
+    private void selectItem(final int position) {
         if (mNavDrawerCallbacks != null) {
-            mNavDrawerCallbacks.onNavDrawerListItemClicked(position);
-            mNavDrawerListView.setItemChecked(position, true);
-
+            getFragmentManager().beginTransaction().replace(R.id.frame_main_content, ProgressBarFragment.getInstance()).commit();
             if (isDrawerOpen()) closeDrawer();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mNavDrawerCallbacks.onNavDrawerListItemClicked(position);
+                }
+            }, 200);
+            mNavDrawerListView.setItemChecked(position, true);
         }
     }
 

@@ -1,7 +1,6 @@
 package dev.learn.phoenix.app.androidkitchensink.base;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -11,14 +10,14 @@ import java.util.List;
 
 import dev.learn.phoenix.app.androidkitchensink.R;
 import dev.learn.phoenix.app.androidkitchensink.base.NavDrawerFragment.NavDrawerCallbacks;
-import dev.learn.phoenix.app.androidkitchensink.util.MetaDataUtil;
 import dev.learn.phoenix.app.androidkitchensink.common.Section;
 import dev.learn.phoenix.app.androidkitchensink.shared.TopicFragment;
+import dev.learn.phoenix.app.androidkitchensink.util.MetaDataUtil;
 
 public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks, FragmentManager.OnBackStackChangedListener {
 
     private DrawerLayout mDrawerLayout;
-    private FrameLayout mFrameMainContent;
+    private FrameLayout mFrameLayout;
 
     private NavDrawerFragment mNavDrawerFragment;
     private FragmentManager mFragmentManager;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerCallback
         mFragmentManager = getSupportFragmentManager();
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_base);
-        mFrameMainContent = (FrameLayout) findViewById(R.id.frame_main_content);
+        mFrameLayout = (FrameLayout) findViewById(R.id.frame_main_content);
 
         mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
         mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
