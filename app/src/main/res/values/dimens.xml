@@ -9,4 +9,5 @@
     <dimen name="feature_list_item_number_text_size">24sp</dimen>
     <dimen name="feature_list_item_name_text_size">15sp</dimen>
     <dimen name="feature_list_item_name_margin_left">15dp</dimen>
+    <dimen name="progress_bar_main_size">65dp</dimen>
 </resources>
