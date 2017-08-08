@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/deep_purple_800</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:activatedBackgroundIndicator">@drawable/nav_drawer_list_item_selector</item>
-        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
         <item name="colorControlActivated">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
