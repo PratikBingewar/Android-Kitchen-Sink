@@ -6,16 +6,17 @@
 
     <LinearLayout
         android:id="@+id/linear_layout_parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="20dp"
-        android:layout_gravity="center"
+        android:weightSum="8"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/linear_layout_to"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
@@ -46,7 +47,8 @@
         <LinearLayout
             android:id="@+id/linear_layout_cc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_marginTop="@dimen/fragment_linear_layout_section_margin_top"
             android:orientation="horizontal">
 
@@ -75,7 +77,8 @@
         <LinearLayout
             android:id="@+id/linear_layout_bcc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_marginTop="@dimen/fragment_linear_layout_section_margin_top"
             android:orientation="horizontal">
 
@@ -104,7 +107,8 @@
         <LinearLayout
             android:id="@+id/linear_layout_subject"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_marginTop="@dimen/fragment_linear_layout_section_margin_top"
             android:orientation="horizontal">
 
@@ -133,7 +137,8 @@
         <LinearLayout
             android:id="@+id/linear_layout_body"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="6"
             android:layout_marginTop="@dimen/fragment_linear_layout_section_margin_top"
             android:orientation="horizontal">
 
