@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="nav_drawer_width">275dp</dimen>
-    <dimen name="nav_drawer_list_item_padding">17dp</dimen>
-    <dimen name="nav_drawer_list_item_padding_left">35dp</dimen>
-    <dimen name="tab_strip_padding">10dp</dimen>
-    <dimen name="tab_strip_text_size">13sp</dimen>
-    <dimen name="feature_list_item_number_box_size">70dp</dimen>
-    <dimen name="feature_list_item_number_text_size">24sp</dimen>
-    <dimen name="feature_list_item_name_text_size">15sp</dimen>
-    <dimen name="feature_list_item_name_margin_left">15dp</dimen>
-    <dimen name="progress_bar_main_size">65dp</dimen>
+	<dimen name="nav_drawer_width">275dp</dimen>
+	<dimen name="nav_drawer_list_item_padding">17dp</dimen>
+	<dimen name="nav_drawer_list_item_padding_left">35dp</dimen>
+	<dimen name="tab_strip_padding">10dp</dimen>
+	<dimen name="tab_strip_text_size">13sp</dimen>
+	<dimen name="feature_list_item_number_box_size">70dp</dimen>
+	<dimen name="feature_list_item_number_text_size">24sp</dimen>
+	<dimen name="feature_list_item_name_text_size">15sp</dimen>
+	<dimen name="feature_list_item_name_margin_left">15dp</dimen>
+	<dimen name="progress_bar_main_size">65dp</dimen>
+	<dimen name="fragment_linear_layout_edit_text_size">13sp</dimen>
+	<dimen name="fragment_linear_layout_section_margin_top">15dp</dimen>
+	<dimen name="fragment_linear_layout_button_text_size">14sp</dimen>
 </resources>

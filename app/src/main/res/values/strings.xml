@@ -2,5 +2,15 @@
     <string name="app_name">Kitchen Sink</string>
     <string name="nav_drawer_open">Open</string>
     <string name="nav_drawer_close">Close</string>
-    <string name="sub_header">Sub Header</string>
+    <string name="to">To</string>
+    <string name="cc">Cc</string>
+    <string name="bcc">Bcc</string>
+    <string name="subject">Subject</string>
+    <string name="body">Body</string>
+    <string name="send">Send</string>
+    <string name="hint_to">test@example.com</string>
+    <string name="hint_cc">cc@example.com</string>
+    <string name="hint_bcc">bcc@example.com</string>
+    <string name="hint_subject">You\'ve got mail!</string>
+    <string name="hint_body">Whoot! Android Dev is just pure Fun. What do you think?</string>
 </resources>
