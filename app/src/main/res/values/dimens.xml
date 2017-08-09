@@ -17,4 +17,5 @@
     <dimen name="fragment_relative_layout_margin">20dp</dimen>
     <dimen name="fragment_relative_layout_section_margin_top">35dp</dimen>
     <dimen name="fragment_relative_layout_text_view_width">50dp</dimen>
+    <dimen name="fragment_percent_relative_layout_margin">30dp</dimen>
 </resources>

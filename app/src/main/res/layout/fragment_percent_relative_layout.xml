@@ -1,7 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-</LinearLayout>
+    <android.support.percent.PercentRelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/fragment_percent_relative_layout_margin">
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/percent_relative_layout_to"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            app:layout_heightPercent="13%">
+
+            <TextView
+                android:id="@+id/text_view_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/to"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:layout_widthPercent="20%" />
+
+            <EditText
+                android:id="@+id/edit_text_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/text_view_to"
+                android:layout_toRightOf="@+id/text_view_to"
+                android:hint="@string/hint_to"
+                android:inputType="textEmailAddress"
+                android:nextFocusDown="@+id/edit_text_cc"
+                android:textSize="@dimen/fragment_linear_layout_edit_text_size">
+
+                <requestFocus />
+            </EditText>
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/percent_relative_layout_cc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignLeft="@+id/percent_relative_layout_to"
+            android:layout_below="@+id/percent_relative_layout_to"
+            app:layout_heightPercent="13%">
+
+            <TextView
+                android:id="@+id/text_view_cc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/cc"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:layout_widthPercent="20%" />
+
+            <EditText
+                android:id="@+id/edit_text_cc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/text_view_cc"
+                android:layout_toRightOf="@+id/text_view_cc"
+                android:hint="@string/hint_cc"
+                android:inputType="textEmailAddress"
+                android:nextFocusDown="@+id/edit_text_bcc"
+                android:textSize="@dimen/fragment_linear_layout_edit_text_size" />
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/percent_relative_layout_bcc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignLeft="@+id/percent_relative_layout_cc"
+            android:layout_below="@+id/percent_relative_layout_cc"
+            app:layout_heightPercent="13%">
+
+            <TextView
+                android:id="@+id/text_view_bcc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/bcc"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:layout_widthPercent="20%" />
+
+            <EditText
+                android:id="@+id/edit_text_bcc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/text_view_bcc"
+                android:layout_toRightOf="@+id/text_view_bcc"
+                android:hint="@string/hint_bcc"
+                android:inputType="textEmailAddress"
+                android:nextFocusDown="@+id/edit_text_subject"
+                android:textSize="@dimen/fragment_linear_layout_edit_text_size" />
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/percent_relative_layout_subject"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignLeft="@+id/percent_relative_layout_bcc"
+            android:layout_below="@+id/percent_relative_layout_bcc"
+            app:layout_heightPercent="13%">
+
+            <TextView
+                android:id="@+id/text_view_subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/subject"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:layout_widthPercent="20%" />
+
+            <EditText
+                android:id="@+id/edit_text_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/text_view_subject"
+                android:layout_toRightOf="@+id/text_view_subject"
+                android:hint="@string/hint_subject"
+                android:inputType="textEmailSubject|textMultiLine"
+                android:nextFocusDown="@+id/edit_text_body"
+                android:textSize="@dimen/fragment_linear_layout_edit_text_size" />
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/percent_relative_layout_body"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignLeft="@+id/percent_relative_layout_subject"
+            android:layout_below="@+id/percent_relative_layout_subject"
+            app:layout_heightPercent="48%">
+
+            <TextView
+                android:id="@+id/text_view_body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/body"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:layout_widthPercent="20%" />
+
+            <EditText
+                android:id="@+id/edit_text_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/text_view_body"
+                android:layout_toRightOf="@+id/text_view_body"
+                android:gravity="top|left"
+                android:hint="@string/hint_body"
+                android:inputType="text|textMultiLine"
+                android:lines="12"
+                android:minLines="8"
+                android:textSize="@dimen/fragment_linear_layout_edit_text_size" />
+        </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</ScrollView>
