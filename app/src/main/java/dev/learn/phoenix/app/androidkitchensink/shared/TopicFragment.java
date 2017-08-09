@@ -2,6 +2,7 @@ package dev.learn.phoenix.app.androidkitchensink.shared;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -22,6 +23,8 @@ public class TopicFragment extends Fragment {
     private static final String SECTIONS = "SECTIONS";
 
     private ViewPager mViewPager;
+    private TabLayout mTabLayout;
+
     private List<Section> mSectionsList;
     private TopicViewPagerAdapter mViewPagerAdapter;
 
@@ -46,6 +49,8 @@ public class TopicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_topic, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
+        mTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+        mTabLayout.setupWithViewPager(mViewPager);
         return view;
     }
 
