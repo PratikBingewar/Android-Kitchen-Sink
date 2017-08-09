@@ -58,6 +58,7 @@ public class MetaDataUtil {
         List<Section> sectionsList = topic.getSections();
         sectionsList.add(new Section("LAYOUTS", getLayoutsList()));
         sectionsList.add(new Section("VIEWS", getViewsList()));
+        sectionsList.add(new Section("DATA BINDING", getDataBindingList()));
     }
 
     private List<FeatureListItem> getLayoutsList() {
@@ -79,6 +80,11 @@ public class MetaDataUtil {
                 new FeatureListItem("Text View", TextViewFragment.class),
                 new FeatureListItem("Edit Text", EditTextFragment.class)
         };
+        return constructList(featureListItems);
+    }
+
+    private List<FeatureListItem> getDataBindingList() {
+        FeatureListItem[] featureListItems = new FeatureListItem[]{};
         return constructList(featureListItems);
     }
 
