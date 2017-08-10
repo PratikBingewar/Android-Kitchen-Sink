@@ -12,6 +12,7 @@ import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.CoordinatorL
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.EditTextFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.FrameLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.LinearLayoutFragment;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.MapViewFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.PercentRelativeLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.RelativeLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.TextViewFragment;
@@ -78,7 +79,8 @@ public class MetaDataUtil {
         FeatureListItem[] featureListItems = new FeatureListItem[]{
                 new FeatureListItem("Button", ButtonFragment.class),
                 new FeatureListItem("Text View", TextViewFragment.class),
-                new FeatureListItem("Edit Text", EditTextFragment.class)
+                new FeatureListItem("Edit Text", EditTextFragment.class),
+                new FeatureListItem("Map View", MapViewFragment.class)
         };
         return constructList(featureListItems);
     }
