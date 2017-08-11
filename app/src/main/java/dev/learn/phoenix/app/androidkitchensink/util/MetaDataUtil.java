@@ -24,7 +24,7 @@ import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.TextViewFrag
 public class MetaDataUtil {
 
     private static final MetaDataUtil S_META_DATA_UTIL = new MetaDataUtil();
-    private final String[] mTopics = {"Welcome", "Views & Layouts", "Styling Views", "Adapter Views", "Event Handling",
+    private final String[] mTopics = {"Views & Layouts", "Styling Views", "Adapter Views", "Event Handling",
             "Networking", "Persistence", "Background Jobs/Services", "Intents",
             "Image Handling", "Surface Views", "Sensors"};
     private List<Topic> topicsList;
@@ -52,7 +52,7 @@ public class MetaDataUtil {
             topicsList.add(new Topic(mTopics[i]));
         }
 
-        populateViewsAndLayouts(topicsList.get(1));
+        populateViewsAndLayouts(topicsList.get(0));
     }
 
     private void populateViewsAndLayouts(Topic topic) {
