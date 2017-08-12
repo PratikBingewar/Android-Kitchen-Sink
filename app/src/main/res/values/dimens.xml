@@ -11,6 +11,7 @@
     <dimen name="feature_list_item_name_text_size">15sp</dimen>
     <dimen name="feature_list_item_name_margin_left">15dp</dimen>
     <dimen name="progress_bar_main_size">65dp</dimen>
+    <dimen name="fragment_default_padding">20dp</dimen>
     <dimen name="fragment_linear_layout_edit_text_size">16sp</dimen>
     <dimen name="fragment_linear_layout_section_margin_top">10dp</dimen>
     <dimen name="fragment_linear_layout_button_text_size">16sp</dimen>
