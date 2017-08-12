@@ -9,4 +9,7 @@
     android:paddingLeft="@dimen/nav_drawer_list_item_padding_left"
     android:paddingRight="@dimen/nav_drawer_list_item_padding"
     android:paddingTop="@dimen/nav_drawer_list_item_padding"
+    android:textStyle="bold"
+    android:textSize="@dimen/nav_drawer_list_item_text_size"
+    android:fontFamily="sans-serif-condensed"
     android:textColor="@drawable/nav_drawer_list_text_selector" />

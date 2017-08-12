@@ -9,13 +9,18 @@ import dev.learn.phoenix.app.androidkitchensink.common.Topic;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.ButtonFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.ConstraintLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.CoordinatorLayoutFragment;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.DataBindingFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.EditTextFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.FrameLayoutFragment;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.ImageViewFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.LinearLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.MapViewFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.PercentRelativeLayoutFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.RelativeLayoutFragment;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.ScrollViewFragment;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.SoftKeyBoardDemoFragment;
 import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.TextViewFragment;
+import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.WebViewFragment;
 
 /**
  * Created by sudhar on 8/2/17.
@@ -24,9 +29,9 @@ import dev.learn.phoenix.app.androidkitchensink.topic_layouts_views.TextViewFrag
 public class MetaDataUtil {
 
     private static final MetaDataUtil S_META_DATA_UTIL = new MetaDataUtil();
-    private final String[] mTopics = {"Views & Layouts", "Styling Views", "Adapter Views", "Event Handling",
-            "Networking", "Persistence", "Background Jobs/Services", "Intents",
-            "Image Handling", "Surface Views", "Sensors"};
+    private final String[] mTopics = {"VIEWS & LAYOUTS", "STYLING VIEWS", "ADAPTER VIEWS", "EVENT HANDLING",
+            "NETWORKING", "PERSISTENCE", "BACKGROUND JOBS/SERVICES", "INTENTS",
+            "IMAGE HANDLING", "SURFACE VIEWS", "SENSORS"};
     private List<Topic> topicsList;
 
     public static MetaDataUtil getInstance() {
@@ -59,17 +64,17 @@ public class MetaDataUtil {
         List<Section> sectionsList = topic.getSections();
         sectionsList.add(new Section("LAYOUTS", getLayoutsList()));
         sectionsList.add(new Section("VIEWS", getViewsList()));
-        sectionsList.add(new Section("DATA BINDING", getDataBindingList()));
+        sectionsList.add(new Section("OTHER", getLayoutsViewsOtherList()));
     }
 
     private List<FeatureListItem> getLayoutsList() {
         FeatureListItem[] featureListItems = new FeatureListItem[]{
-                new FeatureListItem("Linear Layout", LinearLayoutFragment.class),
-                new FeatureListItem("Relative Layout", RelativeLayoutFragment.class),
-                new FeatureListItem("Percentage Relative Layout", PercentRelativeLayoutFragment.class),
-                new FeatureListItem("Frame Layout", FrameLayoutFragment.class),
-                new FeatureListItem("Constraint Layout", ConstraintLayoutFragment.class),
-                new FeatureListItem("Coordinator Layout", CoordinatorLayoutFragment.class)
+                new FeatureListItem("LinearLayout", LinearLayoutFragment.class),
+                new FeatureListItem("RelativeLayout", RelativeLayoutFragment.class),
+                new FeatureListItem("PercentageRelativeLayout", PercentRelativeLayoutFragment.class),
+                new FeatureListItem("FrameLayout", FrameLayoutFragment.class),
+                new FeatureListItem("ConstraintLayout", ConstraintLayoutFragment.class),
+                new FeatureListItem("CoordinatorLayout", CoordinatorLayoutFragment.class)
         };
 
         return constructList(featureListItems);
@@ -77,16 +82,22 @@ public class MetaDataUtil {
 
     private List<FeatureListItem> getViewsList() {
         FeatureListItem[] featureListItems = new FeatureListItem[]{
+                new FeatureListItem("TextView", TextViewFragment.class),
                 new FeatureListItem("Button", ButtonFragment.class),
-                new FeatureListItem("Text View", TextViewFragment.class),
-                new FeatureListItem("Edit Text", EditTextFragment.class),
-                new FeatureListItem("Map View", MapViewFragment.class)
+                new FeatureListItem("EditText", EditTextFragment.class),
+                new FeatureListItem("ImageView", ImageViewFragment.class),
+                new FeatureListItem("WebView", WebViewFragment.class),
+                new FeatureListItem("ScrollView", ScrollViewFragment.class),
+                new FeatureListItem("MapView", MapViewFragment.class)
         };
         return constructList(featureListItems);
     }
 
-    private List<FeatureListItem> getDataBindingList() {
-        FeatureListItem[] featureListItems = new FeatureListItem[]{};
+    private List<FeatureListItem> getLayoutsViewsOtherList() {
+        FeatureListItem[] featureListItems = new FeatureListItem[]{
+                new FeatureListItem("Data Binding", DataBindingFragment.class),
+                new FeatureListItem("Soft Keyboard Demo", SoftKeyBoardDemoFragment.class)
+        };
         return constructList(featureListItems);
     }
 

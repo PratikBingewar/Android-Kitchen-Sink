@@ -14,43 +14,39 @@ import dev.learn.phoenix.app.androidkitchensink.util.MetaDataUtil;
 
 public class MainActivity extends AppCompatActivity implements NavDrawerCallbacks, FragmentManager.OnBackStackChangedListener {
 
-	private DrawerLayout mDrawerLayout;
-	private FrameLayout mFrameLayout;
+    private DrawerLayout mDrawerLayout;
+    private FrameLayout mFrameLayout;
 
-	private NavDrawerFragment mNavDrawerFragment;
-	private FragmentManager mFragmentManager;
+    private NavDrawerFragment mNavDrawerFragment;
+    private FragmentManager mFragmentManager;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		mFragmentManager = getSupportFragmentManager();
+        mFragmentManager = getSupportFragmentManager();
 
-		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_base);
-		mFrameLayout = (FrameLayout) findViewById(R.id.frame_main_content);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_base);
+        mFrameLayout = (FrameLayout) findViewById(R.id.frame_main_content);
 
-		mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
-		mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
+        mNavDrawerFragment = (NavDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_nav_drawer);
+        mNavDrawerFragment.setUp(R.id.fragment_nav_drawer, mDrawerLayout);
 
-		mFragmentManager.addOnBackStackChangedListener(this);
+        mFragmentManager.addOnBackStackChangedListener(this);
 
-		getSupportActionBar().setElevation(0);
-	}
+        getSupportActionBar().setElevation(0);
+    }
 
-	@Override
-	public void onNavDrawerListItemClicked(int position) {
-		try {
-			Fragment fragment = (position == 0) ? HomeFragment.class.newInstance() : TopicFragment.newInstance(MetaDataUtil.getInstance().getSections(position));
-			mFragmentManager.beginTransaction().replace(R.id.frame_main_content, fragment).commit();
-		} catch (InstantiationException | IllegalAccessException e) {
-			e.printStackTrace();
-		}
-	}
+    @Override
+    public void onNavDrawerListItemClicked(int position) {
+        Fragment fragment = TopicFragment.newInstance(MetaDataUtil.getInstance().getSections(position));
+        mFragmentManager.beginTransaction().replace(R.id.frame_main_content, fragment).commit();
+    }
 
 
-	@Override
-	public void onBackStackChanged() {
-		mNavDrawerFragment.toggleMenu((mFragmentManager.getBackStackEntryCount() == 0));
-	}
+    @Override
+    public void onBackStackChanged() {
+        mNavDrawerFragment.toggleMenu((mFragmentManager.getBackStackEntryCount() == 0));
+    }
 }
